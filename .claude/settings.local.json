@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command:*)",
+      "SlashCommand(/sp.tasks)",
+      "Bash(ls:*)",
+      "Bash(python -c \"from main import app; print(''Import successful'')\")",
+      "Bash(python test_imports.py)",
+      "Bash(python test_imports2.py)",
+      "Bash(ren .env .env.backup)"
+    ]
+  }
+}

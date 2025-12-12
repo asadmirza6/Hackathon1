@@ -1,0 +1,52 @@
+# Node.js / npm
+node_modules/
+npm-debug.log*
+*.log
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+.docusaurus/
+website/build/
+book/build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+*.test.js
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docusaurus-specific
+.docusaurus/
+website/versioned_docs/
+website/versioned_sidebars/
+
+# OS
+.DS_Store
+thumbs.db
+
+# Local development
+.npm
+.yarn

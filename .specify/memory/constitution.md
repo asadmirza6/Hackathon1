@@ -1,55 +1,41 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Physical AI & Humanoid Robotics Course Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Content-Source-of-Truth
+The book content (Docusaurus markdown files) is the authoritative source for all chatbot knowledge. The chatbot MUST answer only from book content or user-selected text. No external knowledge injection or inference beyond the provided context is permitted.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### RAG-First Architecture
+Every user query flows through Retrieval-Augmented Generation: retrieve relevant content from Qdrant vector store, augment OpenAI Agent context with those embeddings, generate responses. This ensures traceability and prevents hallucination.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Embedded-First User Experience
+The chatbot lives inside the book (Docusaurus integration), not as a separate tool. Users interact with course content and AI assistance in one unified interface with no context-switching.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Tech Stack Adherence
+Production deployment MUST use: Docusaurus (frontend), FastAPI (backend), OpenAI Agents/ChatKit SDK (LLM), Neon Postgres (session logs), Qdrant Cloud (vector embeddings), GitHub Pages (hosting). No alternatives without architecture review.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Fixed Content Structure
+The course is 4 chapters × 2 lessons each (8 lessons fixed). Lesson count is immutable. All content, embeddable demos, and chatbot training data MUST fit this structure.
 
-### [PRINCIPLE_6_NAME]
+## Technical Requirements
 
+- **Frontend**: Docusaurus 3.x with React custom plugin for chatbot embedding
+- **Backend**: FastAPI with async request handling, request logging to Neon Postgres
+- **LLM**: OpenAI Agents SDK or ChatKit SDK for agentic RAG behavior
+- **Vector DB**: Qdrant Cloud for embedding storage and semantic search
+- **Deployment**: GitHub Pages static hosting (Docusaurus build) + serverless or containerized FastAPI backend
+- **Security**: API key management via environment variables; no secrets in code or git
+- **API Contracts**: REST endpoints documented with OpenAPI/Swagger; request/response schemas versioned
 
-[PRINCIPLE__DESCRIPTION]
+## Development Workflow
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. **Spec-Driven**: Every feature starts with a spec defining requirements, API contracts, and acceptance criteria
+2. **TDD Enforcement**: Tests written first; implementation follows Red-Green-Refactor discipline
+3. **Code Review**: All changes require review confirming alignment with this constitution and spec compliance
+4. **Traceability**: Every change links to a spec, task, or ADR; commit messages reference feature context
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution is the authoritative guide for all development decisions. Amendments require documented rationale and user approval. All PRs MUST verify compliance with core principles before merge.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-09 | **Last Amended**: 2025-12-09
