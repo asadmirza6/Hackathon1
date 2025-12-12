@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command:*)",
+      "SlashCommand(/sp.tasks)",
+      "Bash(ls:*)",
+      "Bash(python -c \"from main import app; print(''Import successful'')\")",
+      "Bash(python test_imports.py)",
+      "Bash(python test_imports2.py)",
+      "Bash(ren .env .env.backup)",
+      "Bash(python -m pip install --upgrade pip)",
+      "Bash(python -m pip install -r requirements.txt)",
+      "Bash(python -c \"import os; open(''.env'', ''a'').close() if not os.path.exists(''.env'') else None\")",
+      "Bash(python server.py)",
+      "Bash(GEMINI_API_KEY=test-key QDRANT_URL=http://localhost:6333 QDRANT_API_KEY=test-key DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/chatbot uvicorn server:app --reload --port 8000)",
+      "Bash(python quickstart.py)",
+      "Bash(ls backend/quickstart*)",
+      "Bash(GEMINI_API_KEY=test-key QDRANT_URL=http://localhost:6333 QDRANT_API_KEY=test-key DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/chatbot python -c \"from app.core.config import AppConfig; config = AppConfig(); print(''Config loaded successfully'')\")",
+      "Bash(timeout 10s cmd /c \"cd backend && set GEMINI_API_KEY=test-key && set QDRANT_URL=http://localhost:6333 && set QDRANT_API_KEY=test-key && set DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/chatbot && python -c \"\"import uvicorn; from server import app; uvicorn.run(app, host=''0.0.0.0'', port=8000)\"\" 2>&1\")",
+      "Bash(python -c \"from server import app; print(''Server app loaded successfully''); print(''App title:'', app.title)\")",
+      "Bash(git add .)"
+    ]
+  }
+}

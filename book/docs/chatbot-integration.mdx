@@ -1,0 +1,43 @@
+# Chatbot Integration
+
+The Physical AI & Humanoid Robotics Course includes an AI-powered chatbot that can answer questions about the course content using Retrieval-Augmented Generation (RAG).
+
+## How It Works
+
+The chatbot uses a RAG (Retrieval-Augmented Generation) system that:
+
+1. Takes your question and searches through course materials
+2. Retrieves the most relevant content
+3. Generates a response based on the retrieved information
+4. Provides source attribution for transparency
+
+## Using the Chatbot
+
+The chatbot is available as a floating widget on every page of the course. Simply click the robot icon in the bottom-right corner to open the chat interface.
+
+### Context-Aware Queries
+
+You can select text on any page and ask questions about it. The chatbot will use the selected text as context to provide more targeted answers.
+
+## Technical Implementation
+
+The chatbot is built with:
+
+- **Frontend**: React component integrated with Docusaurus
+- **Backend**: FastAPI-based RAG system
+- **Vector Database**: Qdrant for semantic search
+- **LLM**: Google Gemini for response generation
+- **Database**: PostgreSQL for query logging and analytics
+
+## API Endpoints
+
+The chatbot communicates with these backend endpoints:
+
+- `POST /v1/query` - Submit a question and receive an AI response
+- `GET /v1/health` - Check system health
+- `GET /v1/logs` - Retrieve query history
+- `GET /v1/logs/metrics` - Get analytics and performance metrics
+
+## Privacy & Data Usage
+
+All queries are logged for improving the system, but personal information is not stored. Query logs are used to identify popular questions and improve course content.

@@ -1,0 +1,344 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile-first approach: base styles are for mobile, desktop overrides at larger breakpoints */
+
+/* Extra small devices (< 480px) */
+@media (max-width: 479px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar__title {
+    font-size: 1rem;
+  }
+
+  .docusaurus-mt-lg {
+    margin-top: 0.5rem;
+  }
+
+  .navbar__items {
+    flex-direction: column;
+  }
+
+  .navbar-sidebar {
+    width: 100% !important;
+  }
+
+  .sidebar {
+    padding: 0.5rem 0;
+  }
+
+  .toc-sticky {
+    display: none;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (tablets, 480px - 768px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .navbar__title {
+    font-size: 1.1rem;
+  }
+
+  .sidebar {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  .docMainContainer {
+    padding: 0 1rem;
+  }
+
+  .markdown h1 {
+    font-size: 1.8rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium devices (small laptops, 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar__title {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    max-width: 280px;
+  }
+
+  .markdown h1 {
+    font-size: 2rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+  .navbar__title {
+    font-size: 1.3rem;
+  }
+
+  .sidebar {
+    max-width: 300px;
+  }
+
+  .markdown h1 {
+    font-size: 2.2rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* === TYPOGRAPHY & READABILITY === */
+
+body {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+.markdown {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.markdown code {
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+[data-theme='dark'] .markdown code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.markdown pre {
+  background-color: #282c34;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+/* === SIDEBAR STYLING === */
+
+.sidebar {
+  background-color: #fafafa;
+  border-right: 1px solid #e0e0e0;
+}
+
+[data-theme='dark'] .sidebar {
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+}
+
+.sidebar .sidebar__item {
+  padding: 0.5rem 0;
+}
+
+.sidebar .active {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.sidebar__item .active {
+  background-color: rgba(46, 133, 85, 0.1);
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: calc(1rem - 3px);
+}
+
+[data-theme='dark'] .sidebar__item .active {
+  background-color: rgba(37, 194, 160, 0.1);
+}
+
+/* === TABLE STYLING === */
+
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .markdown th {
+  background-color: #333;
+}
+
+[data-theme='dark'] .markdown td,
+[data-theme='dark'] .markdown th {
+  border-color: #555;
+}
+
+.markdown tr:hover {
+  background-color: #f9f9f9;
+}
+
+[data-theme='dark'] .markdown tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* === BLOCKQUOTES & CALLOUTS === */
+
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #666;
+  font-style: italic;
+}
+
+[data-theme='dark'] .markdown blockquote {
+  color: #aaa;
+}
+
+/* === LINKS === */
+
+.markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.markdown a:hover {
+  opacity: 0.8;
+}
+
+/* === FOOTER === */
+
+.footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+[data-theme='dark'] .footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+/* === NAVBAR === */
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__search {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* === SPACING & LAYOUT === */
+
+.docMainContainer {
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .docMainContainer {
+    padding: 0 2rem;
+  }
+}
+
+.markdown > h1:first-child {
+  margin-top: 0;
+}
+
+.markdown ol,
+.markdown ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* === ACCESSIBILITY === */
+
+.markdown a:focus,
+.navbar a:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* === SCROLLBAR STYLING (Webkit browsers) === */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
